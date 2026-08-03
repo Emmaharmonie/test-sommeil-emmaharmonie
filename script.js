@@ -406,17 +406,61 @@ function calculateResults() {
     });
 
     let total = 0;
-    let maximum = questions.length * 3;
+    const maximum = questions.length * 3;
 
     questions.forEach((question, index) => {
 
         const answerIndex = userAnswers[index];
-
         const value = question.answers[answerIndex].value;
 
         total += value;
 
+        // Profil principal
         profileScores[question.profile] += value;
+
+        // Pondérations complémentaires
+        switch (question.id) {
+
+            case "stress":
+                profileScores.emotion += value * 0.5;
+                profileScores.hyperactivite += value * 0.5;
+                break;
+
+            case "rumination":
+                profileScores.stress += value * 0.7;
+                profileScores.hyperactivite += value * 0.8;
+                break;
+
+            case "mental":
+                profileScores.rumination += value * 0.8;
+                profileScores.stress += value * 0.5;
+                break;
+
+            case "reveils":
+                profileScores.stress += value * 0.4;
+                break;
+
+            case "ecrans":
+                profileScores.habitudes += value * 0.8;
+                break;
+
+            case "fatigue":
+                profileScores.burnout += value * 0.7;
+                break;
+
+            case "charge":
+                profileScores.stress += value * 0.8;
+                break;
+
+            case "travail":
+                profileScores.emotion += value * 0.8;
+                break;
+
+            case "repos":
+                profileScores.burnout += value * 0.5;
+                break;
+
+        }
 
     });
 
@@ -428,7 +472,6 @@ function calculateResults() {
     showResults(sleepScore);
 
 }
-
 function showResults(score) {
 
     quizSection.classList.add("hidden");
