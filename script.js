@@ -512,9 +512,18 @@ function showResults(score) {
 
             <div class="profile-percent">
 
-                Intensité : ${Math.min(percent,100)}%
+    ${Math.min(percent,100)} %
 
-            </div>
+</div>
+
+<div class="progress-profile">
+
+    <div
+        class="progress-profile-fill"
+        style="width:${Math.min(percent,100)}%">
+    </div>
+
+</div>
 
         </div>
 
