@@ -1,86 +1,87 @@
+// ===============================
+// EmmaHarmonie Test Engine V1
+// ===============================
+
 const questions = [
-  {
-    question: "Vous mettez plus de 30 minutes à vous endormir ?",
-    oui: "Stress ou anxiété",
-    non: null
-  },
-  {
-    question: "Vous vous réveillez plusieurs fois par nuit ?",
-    oui: "Sommeil fragmenté",
-    non: null
-  },
-  {
-    question: "Vous utilisez votre téléphone avant de dormir ?",
-    oui: "Excès d'écrans",
-    non: null
-  },
-  {
-    question: "Vous buvez du café après 16h ?",
-    oui: "Excès de caféine",
-    non: null
-  },
-  {
-    question: "Vous vous sentez fatigué dès le réveil ?",
-    oui: "Sommeil peu réparateur",
-    non: null
-  }
+{
+question:"En ce moment, vous sentez-vous souvent stressé(e) ?",
+answers:[
+"Jamais",
+"Parfois",
+"Souvent",
+"Presque toujours"
+]
+}
 ];
 
-let index = 0;
-let resultats = [];
+let currentQuestion = 0;
 
-const bouton = document.getElementById("demarrer");
+const startButton = document.getElementById("demarrer");
 const questionnaire = document.getElementById("questionnaire");
 const resultat = document.getElementById("resultat");
 
-bouton.addEventListener("click", afficherQuestion);
+startButton.addEventListener("click", startTest);
 
-function afficherQuestion() {
+function startTest(){
 
-    if (index >= questions.length) {
-        afficherResultat();
-        return;
-    }
+startButton.style.display="none";
 
-    const q = questions[index];
+showQuestion();
 
-    questionnaire.innerHTML = `
-        <h2>${q.question}</h2>
-
-        <button onclick="reponse(true)">Oui</button>
-
-        <button onclick="reponse(false)">Non</button>
-    `;
 }
 
-function reponse(oui) {
+function showQuestion(){
 
-    if (oui && questions[index].oui) {
-        resultats.push(questions[index].oui);
-    }
+const q = questions[currentQuestion];
 
-    index++;
+let html = "";
 
-    afficherQuestion();
+html += "<h2>Question " + (currentQuestion+1) + " / " + questions.length + "</h2>";
+
+html += "<h3>"+q.question+"</h3>";
+
+q.answers.forEach((answer,index)=>{
+
+html += "<button class='reponse' onclick='nextQuestion("+index+")'>";
+
+html += answer;
+
+html += "</button>";
+
+});
+
+questionnaire.innerHTML = html;
+
 }
 
-function afficherResultat() {
+function nextQuestion(choice){
 
-    questionnaire.style.display = "none";
-    bouton.style.display = "none";
+currentQuestion++;
 
-    if(resultats.length===0){
+if(currentQuestion>=questions.length){
 
-        resultat.innerHTML =
-        "<h2>Votre sommeil semble globalement satisfaisant.</h2>";
+showResult();
 
-        return;
-    }
+return;
 
-    resultat.innerHTML = `
-        <h2>Causes possibles :</h2>
-        <ul>
-        ${resultats.map(r=>`<li>${r}</li>`).join("")}
-        </ul>
-    `;
+}
+
+showQuestion();
+
+}
+
+function showResult(){
+
+questionnaire.style.display="none";
+
+resultat.style.display="block";
+
+resultat.innerHTML=`
+<h2>🎉 Félicitations</h2>
+
+<p>Le moteur du test fonctionne correctement.</p>
+
+<p>Nous allons maintenant ajouter les 14 autres questions.</p>
+`;
+
 }
