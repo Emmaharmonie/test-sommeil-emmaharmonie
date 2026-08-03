@@ -3,39 +3,222 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pourquoi dormez-vous mal ? | EmmaHarmonie</title>
+    <title>Bilan Sommeil Gratuit | Découvrez pourquoi vous dormez mal | EmmaHarmonie</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Faites gratuitement votre bilan sommeil EmmaHarmonie en moins de 3 minutes. Découvrez les causes probables de vos difficultés à dormir et obtenez des conseils personnalisés.">
+
+    <meta name="robots" content="index,follow">
+
+    <meta name="theme-color" content="#3f5c77">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<header class="hero">
 
-<h1>🌙 Test : Pourquoi dormez-vous mal ?</h1>
+    <div class="hero-overlay"></div>
 
-<p class="intro">
-En moins de 2 minutes, découvrez les causes principales de vos difficultés de sommeil.
-</p>
+    <div class="hero-content">
 
-<button id="demarrer">
-Commencer le test
-</button>
+        <span class="badge">
+            🌙 Bilan sommeil EmmaHarmonie
+        </span>
 
-<div id="progression"></div>
+        <h1>
+            Pourquoi dormez-vous mal ?
+        </h1>
 
-<div id="questionnaire"></div>
+        <p class="hero-text">
 
-<div id="resultat"></div>
+            Répondez à quelques questions et découvrez les principales causes
+            pouvant perturber votre sommeil.
 
-</div>
+            <br><br>
 
-<script src="script.js"></script>
+            Ce bilan est informatif et ne remplace pas un avis médical.
 
-</body>
+        </p>
 
-</html>
+        <div class="hero-infos">
+
+            <div class="info-card">
+                ⏱️
+                <span>3 minutes</span>
+            </div>
+
+            <div class="info-card">
+                📋
+                <span>15 questions</span>
+            </div>
+
+            <div class="info-card">
+                🔒
+                <span>100 % gratuit</span>
+            </div>
+
+        </div>
+
+        <button id="startBtn" class="primary-btn">
+            Commencer mon bilan
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section id="quizSection" class="hidden">
+
+    <div class="quiz-container">
+
+        <div class="progress-top">
+
+            <div class="progress-text">
+
+                <span id="questionNumber">
+                    Question 1 / 15
+                </span>
+
+                <span id="progressPercent">
+                    0 %
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+        <div class="question-card">
+
+            <h2 id="questionTitle"></h2>
+
+            <div id="answersContainer"></div>
+
+        </div>
+
+        <div class="navigation">
+
+            <button
+                id="previousBtn"
+                class="secondary-btn">
+
+                ← Précédent
+
+            </button>
+
+            <button
+                id="nextBtn"
+                class="primary-btn">
+
+                Suivant →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+    id="resultSection"
+    class="hidden">
+
+    <div class="result-container">
+
+        <div class="score-circle">
+
+            <svg
+                viewBox="0 0 220 220">
+
+                <circle
+                    class="bg-circle"
+                    cx="110"
+                    cy="110"
+                    r="90">
+                </circle>
+
+                <circle
+                    id="scoreCircle"
+                    class="progress-circle"
+                    cx="110"
+                    cy="110"
+                    r="90">
+                </circle>
+
+            </svg>
+
+            <div class="score-content">
+
+                <span id="scoreValue">
+                    0%
+                </span>
+
+                <small>
+                    Qualité du sommeil
+                </small>
+
+            </div>
+
+        </div>
+
+        <h2>
+            Votre bilan personnalisé
+        </h2>
+
+        <p class="intro-result">
+
+            D'après vos réponses, plusieurs facteurs semblent
+            influencer la qualité de votre sommeil.
+
+        </p>
+
+        <div class="profiles">
+
+            <h3>
+                Les facteurs les plus présents
+            </h3>
+
+            <div id="profileCards"></div>
+
+        </div>
+
+        <div class="analysis">
+
+            <h3>
+                Ce que cela signifie
+            </h3>
+
+            <div id="analysisText"></div>
+
+        </div>
+
+        <div class="tips">
+
+            <h3>
+                Premières pistes d'amélioration
+            </h3>
+
+            <div id="tipsText"></div>
+
+        </div>
