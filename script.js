@@ -572,6 +572,7 @@ function showResults(score) {
 /* ======================================================================
    INITIALISATION
    ====================================================================== */
+console.log(sendEmail);
 
 sendEmail.addEventListener("click", () => {
 
