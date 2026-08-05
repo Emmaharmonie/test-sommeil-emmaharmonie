@@ -924,5 +924,48 @@ footer{
     margin:0 auto 35px;
     color:#667085;
     font-size:1.05rem;
-    line-height:1.7;
+       line-height:1.7;
+   }
+   .email-box{
+    max-width:700px;
+    margin:60px auto;
+    background:#fff;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.email-box h3{
+    margin-bottom:15px;
+    color:#35546f;
+}
+
+.email-box p{
+    margin-bottom:25px;
+    color:#667085;
+}
+
+.email-box input{
+    width:100%;
+    padding:16px;
+    margin-bottom:15px;
+    border:1px solid #d7dee8;
+    border-radius:12px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.rgpd{
+    display:block;
+    text-align:left;
+    font-size:14px;
+    color:#667085;
+    margin:20px 0;
+}
+
+.rgpd input{
+    width:auto;
+    margin-right:8px;
+}
 }
