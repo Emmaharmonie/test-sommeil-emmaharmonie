@@ -709,7 +709,7 @@ button{
 
     font-weight:700;
 
-    transition:.25s;
+    transition:all .30s ease;
 
 }
 
