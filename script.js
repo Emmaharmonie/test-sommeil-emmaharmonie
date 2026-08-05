@@ -289,9 +289,9 @@ const tipsText = document.getElementById("tipsText");
 const scoreValue = document.getElementById("scoreValue");
 const scoreCircle = document.getElementById("scoreCircle");
 
-const emailInput = document.getElementById("email");
-const consent = document.getElementById("consent");
-const sendEmail = document.getElementById("sendEmail");
+const emailInput = document.getElementById("userEmail");
+const consent = document.getElementById("rgpd");
+const sendEmail = document.getElementById("emailBtn");
 
 const CIRCLE_LENGTH = 565;
 
