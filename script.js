@@ -468,10 +468,13 @@ function calculateResults() {
 
     });
 
-    const sleepScore = Math.max(
-        0,
-        Math.round(100 - ((total / maximum) * 100))
-    );
+    const sleepScore = Math.min(
+100,
+Math.max(
+0,
+Math.round(100 - ((total / maximum) * 100))
+)
+);
 
     showResults(sleepScore);
 
@@ -482,7 +485,7 @@ function showResults(score) {
 
     resultSection.classList.remove("hidden");
 
-    scoreValue.textContent = score + "%";
+    scoreValue.textContent = `${score}%`;
 
     const offset =
         CIRCLE_LENGTH - (score / 100) * CIRCLE_LENGTH;
@@ -504,7 +507,7 @@ function showResults(score) {
 
     sortedProfiles.forEach(([profile, value]) => {
 
-        const percent = Math.round((value / 9) * 100);
+        const percent = Math.round((value / 12) * 100);
 
         profileCards.innerHTML += `
 
