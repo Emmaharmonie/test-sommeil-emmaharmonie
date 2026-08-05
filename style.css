@@ -927,29 +927,33 @@ footer{
        line-height:1.7;
    }
    .email-box{
-    max-width:700px;
-    margin:60px auto;
-    background:#fff;
+    max-width:900px;
+    margin:70px auto;
     padding:40px;
+    background:#ffffff;
     border-radius:24px;
     box-shadow:0 15px 45px rgba(0,0,0,.08);
-    text-align:center;
 }
 
 .email-box h3{
-    margin-bottom:15px;
+    text-align:center;
     color:#35546f;
+    margin-bottom:15px;
+    font-size:2rem;
 }
 
 .email-box p{
-    margin-bottom:25px;
+    text-align:center;
     color:#667085;
+    margin-bottom:30px;
+    line-height:1.7;
 }
 
-.email-box input{
+.email-box input[type="text"],
+.email-box input[type="email"]{
     width:100%;
     padding:16px;
-    margin-bottom:15px;
+    margin-bottom:18px;
     border:1px solid #d7dee8;
     border-radius:12px;
     font-size:16px;
@@ -957,15 +961,36 @@ footer{
 }
 
 .rgpd{
-    display:block;
-    text-align:left;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin:25px 0;
     font-size:14px;
     color:#667085;
-    margin:20px 0;
+    line-height:1.5;
 }
 
 .rgpd input{
+    margin-top:4px;
     width:auto;
-    margin-right:8px;
+    flex-shrink:0;
 }
+
+.email-box button{
+    display:block;
+    width:100%;
+    max-width:340px;
+    margin:35px auto 0;
 }
+
+.medical-warning{
+    margin-top:35px;
+    padding:20px;
+    border-left:5px solid #e4b363;
+    background:#fff8ef;
+    border-radius:12px;
+    font-size:.95rem;
+    line-height:1.7;
+}
+    
+
