@@ -570,6 +570,23 @@ function showResults(score) {
    INITIALISATION
    ====================================================================== */
 
+sendEmail.addEventListener("click", () => {
+
+    if (!emailInput.value.trim()) {
+        alert("Merci de renseigner votre adresse e-mail.");
+        emailInput.focus();
+        return;
+    }
+
+    if (!consent.checked) {
+        alert("Merci d'accepter le traitement de votre adresse e-mail.");
+        return;
+    }
+
+    alert("Merci ! Cette fonctionnalité sera reliée prochainement à l'envoi automatique de votre bilan.");
+
+});
+
 startBtn.addEventListener("click", startQuiz);
 
 nextBtn.addEventListener("click", nextQuestion);
