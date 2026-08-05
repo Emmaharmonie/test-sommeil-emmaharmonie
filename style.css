@@ -626,31 +626,22 @@ button{
 /* ====================================================== */
 
 .medical-warning{
-
     margin-top:40px;
-
-    background:#fff7e7;
-
-    border-left:6px solid var(--warning);
-
     padding:28px;
-
+    background:#fff8ef;
+    border-left:6px solid #e4b363;
     border-radius:14px;
-
+    font-size:.95rem;
+    line-height:1.7;
 }
 
 .medical-warning strong{
-
     display:block;
-
     margin-bottom:12px;
-
 }
 
 .medical-warning p{
-
     margin-bottom:12px;
-
 }
 
 /* ====================================================== */
