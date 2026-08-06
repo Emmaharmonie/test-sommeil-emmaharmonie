@@ -574,20 +574,67 @@ function showResults(score) {
    ====================================================================== */
 console.log(sendEmail);
 
-sendEmail.addEventListener("click", () => {
+sendEmail.addEventListener("click", async () => {
 
-    if (!emailInput.value.trim()) {
+    const email = emailInput.value.trim();
+
+    const prenom = document.getElementById("userName").value.trim();
+
+    if (!email) {
+
         alert("Merci de renseigner votre adresse e-mail.");
+
         emailInput.focus();
+
         return;
+
     }
 
     if (!consent.checked) {
+
         alert("Merci d'accepter le traitement de votre adresse e-mail.");
+
         return;
+
     }
 
-    alert("Merci ! Cette fonctionnalité sera reliée prochainement à l'envoi automatique de votre bilan.");
+    try {
+
+        const response = await fetch(
+            "https://holy-bread-8d25.cold-scene-540a.workers.dev/",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    prenom: prenom,
+                    email: email
+                })
+            }
+        );
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            alert("Connexion avec le serveur réussie.");
+
+            console.log(result);
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Impossible de contacter le serveur.");
+
+    }
 
 });
 
