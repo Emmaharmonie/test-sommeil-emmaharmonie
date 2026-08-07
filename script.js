@@ -618,11 +618,11 @@ sendEmail.addEventListener("click", async () => {
 
         if (result.success) {
 
-            621    alert("Connexion avec le serveur réussie.");
+                alert("Connexion avec le serveur réussie.");
 
-622    console.log(result);
+    console.log(result);
 
-623    window.location.href = "bilan.html";
+    window.location.href = "bilan.html";
 
         } else {
 
