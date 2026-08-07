@@ -616,19 +616,13 @@ sendEmail.addEventListener("click", async () => {
 
         const result = await response.json();
 
-        if (result.success) {
-
-                alert("Connexion avec le serveur réussie.");
-
+       if (result.success) {
+    alert("Connexion avec le serveur réussie.");
     console.log(result);
-
     window.location.href = "bilan.html";
-
-        } else {
-
-            alert(result.message);
-
-        }
+} else {
+    alert(result.message);
+}
 
     } catch (error) {
 
