@@ -301,15 +301,14 @@ function startQuiz() {
 
     quizSection.classList.remove("hidden");
 
-window.scrollTo({
-    top: 0,
-    behavior: "instant"
-});
-
     displayQuestion();
 
-}
+    quizSection.scrollIntoView({
+        behavior: "auto",
+        block: "start"
+    });
 
+}
 function displayQuestion() {
 
     const question = questions[currentQuestion];
