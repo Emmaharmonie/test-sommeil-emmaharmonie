@@ -301,12 +301,15 @@ function startQuiz() {
 
     quizSection.classList.remove("hidden");
 
+    window.scrollTo(0, 0);
+
     displayQuestion();
 
-    quizSection.scrollIntoView({
-        behavior: "auto",
-        block: "start"
-    });
+    setTimeout(() => {
+
+        window.scrollTo(0, 0);
+
+    }, 100);
 
 }
 function displayQuestion() {
