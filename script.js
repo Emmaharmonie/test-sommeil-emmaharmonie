@@ -301,6 +301,11 @@ function startQuiz() {
 
     quizSection.classList.remove("hidden");
 
+window.scrollTo({
+    top: 0,
+    behavior: "instant"
+});
+
     displayQuestion();
 
 }
