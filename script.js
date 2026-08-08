@@ -371,6 +371,14 @@ function displayQuestion() {
         currentQuestion === questions.length - 1
             ? "Voir mon bilan"
             : "Suivant →";
+setTimeout(() => {
+
+    questionTitle.scrollIntoView({
+        behavior: "auto",
+        block: "start"
+    });
+
+}, 10);
 
 }
 
