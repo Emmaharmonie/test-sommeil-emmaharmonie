@@ -331,6 +331,8 @@ button{
 
     box-shadow:var(--shadow);
 
+    scroll-margin-top:20px;
+
 }
 
 .question-card h2{
